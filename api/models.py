@@ -4,7 +4,7 @@ from django.db import models
 
 class MicroServiceToken(models.Model):
     name = models.CharField(max_length=50)
-    secret_key = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, db_index=True)
+    secret_key = models.UUIDField(default=uuid.uuid4, unique=True, db_index=True)
     description = models.TextField(blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
